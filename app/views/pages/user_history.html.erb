@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<%=render 'layouts/menu'%>
+
+<center>
+<h1>Your Service History</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Service</th>
+      <th>Charge</th>
+      <th>Feedback</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_histories.each do |service_history| %>
+   <%if @service_history.present? %>
+     <tr>
+        <td><%= service_history.user %></td>
+        <td><%= service_history.service.find[:id] %></td>
+        <td><%= service_history.charge %></td>
+        <td><%= service_history.feedback %></td>
+        <td><%= link_to 'Show', service_history %></td>
+        <td><%= link_to 'Edit', edit_service_history_path(service_history) %></td>
+        <td><%= link_to 'Destroy', service_history, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+     <%else%>
+     
+     <p> No Service History To Show :( </p>
+      
+    <% end %>
+    <%end%>
+  </tbody>
+</table>
+
+</center>

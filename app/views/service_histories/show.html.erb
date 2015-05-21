@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @service_history.user %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @service_history.service %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @service_history.charge %>
+</p>
+
+<p>
+  <strong>Feedback:</strong>
+  <%= @service_history.feedback %>
+</p>
+
+<%= link_to 'Edit', edit_service_history_path(@service_history) %> |
+<%= link_to 'Back', service_histories_path %>
