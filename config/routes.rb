@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :businesses
   resources :service_histories
   devise_for :users
-  resources :users
+  resources :users, :path => 'u'
 
 
   root 'pages#index'
