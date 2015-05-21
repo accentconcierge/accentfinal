@@ -4,14 +4,10 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: d2qd6jkbokompk
+default: &default
+  adapter: sqlite3
   pool: 5
-  username: gmrthdnizwahko
-  password:  xYZIoCHD3RcZZuo6iRqoBf68H6
-  host: ec2-23-23-81-221.compute-1.amazonaws.com
+  timeout: 5000
 
 
 development:
@@ -27,4 +23,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: db/production.sqlite3
